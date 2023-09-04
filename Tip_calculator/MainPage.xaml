@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tip_calculator.MainPage"
+             Title="Tip Calculator">
+
+    <VerticalStackLayout>
+
+        <!--Amounts fields-->
+        <Grid HorizontalOptions="Center"
+              ColumnSpacing="70"
+              RowSpacing="10"
+              Padding="10, 0"
+              Margin="0, 20, 0, 0"
+              RowDefinitions="*, *, *, *"
+              ColumnDefinitions="*, *">
+
+            <Label Text="Bill" 
+                   FontSize="Body" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Start" 
+                   VerticalOptions="Center"  
+                   Grid.Row="0" 
+                   Grid.Column="0" />
+            
+            <Label Text="$0.00" 
+                   x:Name="billAmountLabel" 
+                   FontSize="Body" 
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   Grid.Row="0" 
+                   Grid.Column="1"/>
+            
+            <Label Text="Tip" 
+                   FontSize="Body" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" 
+                   Grid.Row="1" 
+                   Grid.Column="0"/>
+            
+            <Label Text="$0.00" 
+                   x:Name="tipAmountLabel" 
+                   FontSize="Body" 
+                   HorizontalOptions="End" 
+                   VerticalOptions="Center" 
+                   Grid.Row="1" 
+                   Grid.Column="1"/>
+            
+            <Label Text="Total" 
+                   FontSize="Body" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Grid.Row="2" 
+                   Grid.Column="0"/>
+            
+            <Label Text="$0.00" 
+                   x:Name="totalAmountLabel" 
+                   FontSize="Body" 
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" 
+                   Grid.Row="2"
+                   Grid.Column="1"/>
+            
+            <Label Text="Cost per diner"
+                   FontSize="Body" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Start" 
+                   VerticalOptions="Center"  
+                   Grid.Row="3" 
+                   Grid.Column="0"/>
+            
+            <Label Text="$0.00" 
+                   x:Name="costPerDinerLabel" 
+                   FontSize="Body" 
+                   HorizontalOptions="End" 
+                   VerticalOptions="Center"
+                   Grid.Row="3"
+                   Grid.Column="1"/>
+
+        </Grid>
+
+        <!--Keyboard-->
+        <HorizontalStackLayout HorizontalOptions="Fill">
+            
+            <Grid WidthRequest="400"                 
+                  HeightRequest="350" 
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  Margin="0, 20"
+                  Padding="20"
+                  RowDefinitions="*, *, *, *"
+                  ColumnDefinitions="*, *, *">
+
+                <Button x:Name="button7" 
+                        Text="7" 
+                        FontSize="Large" 
+                        Grid.Row="0" 
+                        Grid.Column="0" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold" 
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="button8" 
+                        Text="8" 
+                        FontSize="Large" 
+                        Grid.Row="0" 
+                        Grid.Column="1" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="button9" 
+                        Text="9" 
+                        FontSize="Large" 
+                        Grid.Row="0" 
+                        Grid.Column="2" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="button4" 
+                        Text="4" 
+                        FontSize="Large" 
+                        Grid.Row="1" 
+                        Grid.Column="0"
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="button5" 
+                        Text="5" 
+                        FontSize="Large" 
+                        Grid.Row="1" 
+                        Grid.Column="1" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="button6" 
+                        Text="6" 
+                        FontSize="Large" 
+                        Grid.Row="1" 
+                        Grid.Column="2" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="button1" 
+                        Text="1" 
+                        FontSize="Large" 
+                        Grid.Row="2" 
+                        Grid.Column="0" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="button2" 
+                        Text="2" 
+                        FontSize="Large" 
+                        Grid.Row="2" 
+                        Grid.Column="1" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="button3" 
+                        Text="3" 
+                        FontSize="Large" 
+                        Grid.Row="2" 
+                        Grid.Column="2" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="button0" 
+                        Text="0" 
+                        FontSize="Large" 
+                        Grid.Row="3" 
+                        Grid.Column="0" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="buttonDot" 
+                        Text="." 
+                        FontSize="Large" 
+                        Grid.Row="3" 
+                        Grid.Column="1" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+                
+                <Button x:Name="buttonClear" 
+                        Text="C" 
+                        FontSize="Large" 
+                        Grid.Row="3" 
+                        Grid.Column="2" 
+                        HeightRequest="80"
+                        VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        CornerRadius="1"
+                        Clicked="OnButtonPressed"/>
+            
+            </Grid>
+            
+        </HorizontalStackLayout>
+        
+        <!--Tip percentage slider-->
+        <HorizontalStackLayout HorizontalOptions="Center"
+                               Padding="5"
+                               Margin="20">
+
+            <Slider x:Name="percentageSlider"
+                    WidthRequest="300"
+                    Minimum="0"
+                    Maximum="100"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    Value="0"
+                    ValueChanged="percentageSlider_ValueChanged" />
+
+            <Label x:Name="percentageLabel"
+                   Text="0%"
+                   FontSize="Body" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Fill" />
+
+        </HorizontalStackLayout>
+    
+        <!--Number of diners stepper control-->
+        <Grid WidthRequest="300"
+              HeightRequest="140" 
+              HorizontalOptions="Center"
+              RowSpacing="0"
+              Padding="20"
+              RowDefinitions="*, *"
+              ColumnDefinitions="*, *">
+
+            <Stepper x:Name="dinersStepper" 
+                     WidthRequest="300" 
+                     Grid.ColumnSpan="2"
+                     Grid.Row="0"
+                     Minimum="1"
+                     Value="1"
+                     VerticalOptions="Center"
+                     ValueChanged="dinersStepper_ValueChanged" 
+                     Increment="1"/>
+            
+            <Label Text="Diners"
+                   FontSize="Body" 
+                   FontAttributes="Bold" 
+                   Grid.Column="0"
+                   Grid.Row="1"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+
+            <Label x:Name="dinersNumberLabel"
+                   Text="1"
+                   FontSize="Body" 
+                   FontAttributes="Bold" 
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+        </Grid>
+
+    </VerticalStackLayout>
+    
+</ContentPage>
